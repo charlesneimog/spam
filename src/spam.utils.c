@@ -6,7 +6,7 @@
 
 #include "spam.utils.h"
 #include "spam.tie.h"
-#include "../pd/src/g_canvas.h"
+#include <g_canvas.h>
 #include <string.h>
 #include <stdarg.h>
 
@@ -203,20 +203,20 @@ char spam_master_init(t_spam_master* master, t_symbol* name, int n, int argc, t_
         master->s_block = spam_mater_get_object(master->s_canvas,  "block~", 6);
         if(!master->s_block)
         {
-            error("spam.process~: can't allocate master switch~ object.");
+            pd_error(master, "spam.process~: can't allocate master switch~ object.");
             return -1;
         }
         master->s_tie  = spam_mater_get_object(master->s_canvas,  "spam.tie", 8);
         if(!master->s_block)
         {
-            error("spam.process~: can't allocate tie object.");
+            pd_error(master,"spam.process~: can't allocate tie object.");
             return -1;
         }
         mess1((t_pd *)master->s_tie, gensym("setprocess"), (t_object*)master);
     }
     else
     {
-        error("spam.process~: can't allocate master canvas.");
+        pd_error(master,"spam.process~: can't allocate master canvas.");
         return -1;
     }
     
@@ -232,7 +232,7 @@ char spam_master_init(t_spam_master* master, t_symbol* name, int n, int argc, t_
             master->s_subcanvas[i] = spam_master_load_canvas(master, name, i, argc, argv);
             if(!master->s_subcanvas[i])
             {
-                error("spam.process~: can't allocate subcanvas %i.", i);
+                pd_error(master,"spam.process~: can't allocate subcanvas %i.", i);
                 return -1;
             }
         }
@@ -240,7 +240,7 @@ char spam_master_init(t_spam_master* master, t_symbol* name, int n, int argc, t_
     }
     else
     {
-        error("spam.process~: can't allocate subcanvases.");
+        pd_error(master,"spam.process~: can't allocate subcanvases.");
         return -1;
     }
     

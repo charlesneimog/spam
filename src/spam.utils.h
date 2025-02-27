@@ -6,7 +6,7 @@
 
 #ifndef spam_utils_h
 #define spam_utils_h
-#include "../pd/src/m_pd.h"
+#include <m_pd.h>
 #include "spam.io.h"
 
 typedef void (*t_spam_bang_method)(t_object* x);

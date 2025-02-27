@@ -5,7 +5,7 @@
 */
 
 #include "spam.tie.h"
-#include "../pd/src/g_canvas.h"
+#include <g_canvas.h>
 #include <string.h>
 
 static t_class* spam_tie_class;
@@ -74,25 +74,3 @@ t_object* spam_tie_get_process(t_spam_tie* tie)
     }
     return NULL;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -4,9 +4,9 @@
  // WARRANTIES, see the file, "LICENSE.txt," in this distribution.
  */
 
-#include "../pd/src/m_pd.h"
-#include "../pd/src/m_imp.h"
-#include "../pd/src/g_canvas.h"
+#include <m_pd.h>
+#include <m_imp.h>
+#include <g_canvas.h>
 #include <string.h>
 
 typedef struct _spam_connect

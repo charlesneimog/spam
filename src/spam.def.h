@@ -6,7 +6,7 @@
 
 #ifndef spam_def_h
 #define spam_def_h
-#include "../pd/src/m_pd.h"
+#include <m_pd.h>
 
 #define __spam_version_major__ 0
 #define __spam_version_minor__ 0

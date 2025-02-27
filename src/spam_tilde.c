@@ -61,7 +61,7 @@ static void spam_tilde_vis(t_spam_tilde *x, t_floatarg index)
 {
     if(spam_master_visible((t_spam_master *)x, index))
     {
-        error("spam.process~: index out of range!");
+        pd_error(x,"spam.process~: index out of range!");
     }
 }
 
